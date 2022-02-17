@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "682045885586",
+    "firebase_url": "https://jkimtech-default-rtdb.firebaseio.com",
+    "project_id": "jkimtech",
+    "storage_bucket": "jkimtech.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:682045885586:android:0014a2e338750564d4aa4b",
+        "android_client_info": {
+          "package_name": "tech.jkimtech.firebase_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "682045885586-nb98odf6bm7ehuip6sjksa56f7ijjkk7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaUkGmI5TPdiZVTHDLK3_U4nag1fbUi0k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "682045885586-nb98odf6bm7ehuip6sjksa56f7ijjkk7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:682045885586:android:730cb4a439333313d4aa4b",
+        "android_client_info": {
+          "package_name": "tech.jkimtech.jkimplayer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "682045885586-nb98odf6bm7ehuip6sjksa56f7ijjkk7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaUkGmI5TPdiZVTHDLK3_U4nag1fbUi0k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "682045885586-nb98odf6bm7ehuip6sjksa56f7ijjkk7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:682045885586:android:dbbcd1823ee76df8d4aa4b",
+        "android_client_info": {
+          "package_name": "tech.jkimtech.logindemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "682045885586-nb98odf6bm7ehuip6sjksa56f7ijjkk7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaUkGmI5TPdiZVTHDLK3_U4nag1fbUi0k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "682045885586-nb98odf6bm7ehuip6sjksa56f7ijjkk7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

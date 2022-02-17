@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">firebase-chat</string>
+    <string name="register">Register</string>
+</resources>
