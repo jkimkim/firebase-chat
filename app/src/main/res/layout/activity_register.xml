@@ -63,5 +63,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10sp"
         android:textColor="@color/white" />
+    <TextView
+        android:id="@+id/haveAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Already have an account? Login"
+        android:textAlignment="center"
+        android:layout_below="@+id/registerBtn"
+        android:layout_marginTop="30sp"
+        android:textColor="@color/jkimtechLinks"
+        />
 
 </RelativeLayout>

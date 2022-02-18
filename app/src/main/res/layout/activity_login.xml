@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:backgroundTint="@color/jkimtechWhite"
+    tools:context=".LoginActivity">
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textAlignment="center"
+      android:text="Login"
+      android:textColor="@color/jkimtechLinks"
+      android:textSize="25sp">
+  </TextView>
+  <com.google.android.material.textfield.TextInputLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_centerHorizontal="true"
+      android:layout_centerVertical="true"
+      android:id="@+id/emailField"
+      android:layout_marginBottom="10dp">
+    <EditText
+        android:id="@+id/emailAd"
+        android:inputType="textEmailAddress"
+        android:hint="Email"
+        android:textColor="@color/jkimtechGrey"
+        android:backgroundTint="@color/jkimtechLight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <com.google.android.material.textfield.TextInputLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_centerHorizontal="true"
+      android:layout_centerVertical="true"
+      android:id="@+id/passField"
+      android:layout_below="@+id/emailField"
+      app:passwordToggleEnabled="true"
+      android:layout_marginTop="10dp">
+
+    <EditText
+        android:id="@+id/passIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/jkimtechLight"
+        android:hint="@string/app_name"
+        android:inputType="textPassword"
+        android:textColor="@color/jkimtechGrey" />
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <Button
+      android:id="@+id/loginBtn"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/passField"
+      android:backgroundTint="@color/jkimtech_blue"
+      android:text="log in"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="10sp"
+      android:textColor="@color/white" />
+  <TextView
+      android:id="@+id/noAccount"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Don't have an account? Register"
+      android:textAlignment="center"
+      android:layout_below="@+id/loginBtn"
+      android:layout_marginTop="30sp"
+      android:textColor="@color/jkimtechLinks"
+      />
+
+</RelativeLayout>
