@@ -19,6 +19,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -31,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText mEmailAd, mPasswordIn;
     Button mLoginBtn;
     TextView mNoAccount, mRecoverPass;
+    SignInButton mGoogleLoginBtn;
 
     ProgressDialog pD;
     private FirebaseAuth mAuth;
@@ -51,6 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         mRecoverPass = findViewById(R.id.recoverPass);
         mLoginBtn = findViewById(R.id.loginBtn);
         mNoAccount = findViewById(R.id.noAccount);
+        mGoogleLoginBtn = findViewById(R.id.googleLoginBtn);
 
         mAuth = FirebaseAuth.getInstance();
         pD = new ProgressDialog(this);
@@ -86,6 +90,12 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        mGoogleLoginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
     private void showRecoverPasswordDialog() {
