@@ -4,13 +4,18 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText mEmailAd, mPasswordIn;
     Button mLoginBtn;
-    TextView mNoAccount;
+    TextView mNoAccount, mRecoverPass;
 
     ProgressDialog pD;
     private FirebaseAuth mAuth;
@@ -43,12 +48,20 @@ public class LoginActivity extends AppCompatActivity {
 
         mEmailAd = findViewById(R.id.emailAd);
         mPasswordIn = findViewById(R.id.passIn);
+        mRecoverPass = findViewById(R.id.recoverPass);
         mLoginBtn = findViewById(R.id.loginBtn);
         mNoAccount = findViewById(R.id.noAccount);
 
         mAuth = FirebaseAuth.getInstance();
         pD = new ProgressDialog(this);
-        pD.setMessage("logging in...");
+
+
+        mRecoverPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showRecoverPasswordDialog();
+            }
+        });
 
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,12 +82,73 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+                finish();
             }
         });
 
     }
 
+    private void showRecoverPasswordDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Recover password");
+
+        LinearLayout linearLayout = new LinearLayout(this);
+        EditText emailEt = new EditText(this);
+        emailEt.setHint("Email");
+        emailEt.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+
+        emailEt.setMinEms(16);
+
+        linearLayout.addView(emailEt);
+        linearLayout.setPadding(10, 10,10,10);
+
+        builder.setView(linearLayout);
+
+        builder.setPositiveButton("Recover", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                String email = emailEt.getText().toString().trim();
+
+                beginRecovery(email);
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        builder.create().show();
+    }
+
+    private void beginRecovery(String email) {
+
+        pD.setMessage("Sending email...");
+        pD.show();
+
+        mAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                pD.dismiss();
+                if (task.isSuccessful()){
+                    Toast.makeText(LoginActivity.this,"Email sent", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(LoginActivity.this,"That Failed!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                pD.dismiss();
+
+                Toast.makeText(LoginActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     private void loginUser(String email, String password) {
+        pD.setMessage("logging in...");
         pD.show();
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {

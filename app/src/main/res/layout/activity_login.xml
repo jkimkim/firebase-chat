@@ -64,13 +64,23 @@
       android:layout_marginTop="10sp"
       android:textColor="@color/white" />
   <TextView
+      android:id="@+id/recoverPass"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Forgot password?"
+      android:textAlignment="center"
+      android:layout_below="@+id/loginBtn"
+      android:layout_marginTop="30sp"
+      android:textColor="@color/jkimtechLight"
+      />
+  <TextView
       android:id="@+id/noAccount"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:text="Don't have an account? Register"
       android:textAlignment="center"
-      android:layout_below="@+id/loginBtn"
-      android:layout_marginTop="30sp"
+      android:layout_below="@+id/recoverPass"
+      android:layout_marginTop="90sp"
       android:textColor="@color/jkimtechLinks"
       />
 
