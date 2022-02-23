@@ -10,31 +10,58 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class ProfileActivity extends AppCompatActivity {
+public class DashboardActivity extends AppCompatActivity {
 
-    TextView mProfileTv;
+    //TextView mProfileTv;
     FirebaseAuth firebaseAuth;
+
+    ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_dashboard);
 
-        ActionBar actionBar = getSupportActionBar();
+        actionBar = getSupportActionBar();
         actionBar.setTitle("Profile");
 
         firebaseAuth = FirebaseAuth.getInstance();
-        mProfileTv = findViewById(R.id.profileTv);
+
+        BottomNavigationView navigationView = findViewById(R.id.navigatiom_view);
+        navigationView.setOnNavigationItemSelectedListener(selectedListener);
+        //mProfileTv = findViewById(R.id.profileTv);
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener selectedListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                    switch (item.getItemId()){
+                        case R.id.nav_home:
+                            return true;
+
+                        case R.id.nav_profile:
+                            return true;
+
+                        case R.id.nav_users:
+                            return true;
+                    }
+
+                    return false;
+                }
+            };
+
     private void checkUserStatus(){
         FirebaseUser user = firebaseAuth.getCurrentUser();
         if (user != null){
-            mProfileTv.setText(user.getEmail());
+           // mProfileTv.setText(user.getEmail());
         }else{
-            startActivity(new Intent(ProfileActivity.this, MainActivity.class));
+            startActivity(new Intent(DashboardActivity.this, MainActivity.class));
             finish();
         }
     }

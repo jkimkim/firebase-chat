@@ -16,7 +16,7 @@
             android:exported="false"
             android:label="@string/title_activity_login" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".DashboardActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

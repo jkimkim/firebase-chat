@@ -7,11 +7,14 @@
         <entry key="..\:/Users/hp/AndroidStudioProjects/firebasechat/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1655" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/firebasechat/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.24765625" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/firebasechat/app/src/main/res/layout-w936dp/activity_login.xml" value="0.168359375" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/firebasechat/app/src/main/res/layout/activity_dashboard.xml" value="0.18426678067550234" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/firebasechat/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/firebasechat/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/firebasechat/app/src/main/res/layout/activity_profile.xml" value="0.25" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/firebasechat/app/src/main/res/layout/activity_register.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/firebasechat/app/src/main/res/layout/fragment_home.xml" value="0.18426678067550234" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/firebasechat/app/src/main/res/menu/menu.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/firebasechat/app/src/main/res/menu/menu_nav.xml" value="0.18426678067550234" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/firebasechat/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1655" />
       </map>
     </option>
