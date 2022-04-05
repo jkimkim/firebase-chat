@@ -19,13 +19,11 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Firebasechat"
-        android:banner="TODO">
+        android:theme="@style/Theme.Firebasechat" >
         <activity
             android:name=".LoginActivity"
             android:exported="false"
-            android:label="@string/title_activity_login"
-            />
+            android:label="@string/title_activity_login" />
         <activity
             android:name=".DashboardActivity"
             android:exported="true" >
