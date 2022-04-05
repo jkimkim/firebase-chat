@@ -25,7 +25,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_alignParentStart="true"
-            android:src="@drawable/ic_baseline_chevron_left_24"
+            android:src="@drawable/back"
             />
 
         <TextView
@@ -47,7 +47,7 @@
             android:layout_height="30dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/ic_baseline_menu_24" />
+            android:src="@drawable/menubars" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -61,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/JKL" />
+            android:src="@drawable/logo" />
 
         <ImageView
             android:id="@+id/imageViewGradient"
@@ -84,7 +84,7 @@
         android:gravity="center_horizontal"
         android:singleLine="true"
         android:text="Song Name"
-        android:textColor="@color/background_gradient_end"
+        android:textColor="@color/jkimtechWhite"
         android:textSize="22sp"
         android:textStyle="bold" />
 
@@ -101,7 +101,7 @@
         android:gravity="center_horizontal"
         android:singleLine="true"
         android:text="Song Artist"
-        android:textColor="@color/background_gradient_end"
+        android:textColor="@color/jkimtechWhite"
         android:textSize="22sp" />
 
     <RelativeLayout
@@ -120,7 +120,7 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="32dp"
-            android:src="@drawable/ic_baseline_shuffle_0ff"/>
+            android:src="@drawable/shuffle_off"/>
 
         <ImageView
             android:id="@+id/id_prev"
@@ -129,17 +129,16 @@
             android:layout_centerVertical="true"
             android:layout_marginEnd="16dp"
             android:layout_toStartOf="@+id/play_pause"
-            android:src="@drawable/ic_baseline_skip_previous_24" />
+            android:src="@drawable/prev" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/play_pause"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
             android:clickable="true"
             android:focusable="true"
-            android:src="@drawable/ic_baseline_play_circle_filled_24" />
+            android:src="@drawable/play" />
 
         <ImageView
             android:id="@+id/id_next"
@@ -148,7 +147,7 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="16dp"
             android:layout_toEndOf="@+id/play_pause"
-            android:src="@drawable/ic_baseline_skip_next_24" />
+            android:src="@drawable/next" />
 
         <ImageView
             android:id="@+id/id_repeat"
@@ -158,7 +157,7 @@
             android:layout_centerVertical="true"
 
             android:layout_marginEnd="32dp"
-            android:src="@drawable/ic_baseline_repeat_off" />
+            android:src="@drawable/repeat_off" />
 
     </RelativeLayout>
     <RelativeLayout

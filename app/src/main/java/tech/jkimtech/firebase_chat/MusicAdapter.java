@@ -44,8 +44,8 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyViewHolder
         }
         else {
             Glide.with(mContext)
-                    .load(R.drawable.jkl)
-                    .load(R.drawable.jkl)
+                    .load(R.drawable.logo)
+                    .load(R.drawable.logo)
                     .into(holder.album_art);
         }
         holder.itemView.setOnClickListener(new View.OnClickListener() {

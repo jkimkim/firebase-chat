@@ -1,6 +1,7 @@
 package tech.jkimtech.firebase_chat;
 
-import android.app.Activity;
+import static tech.jkimtech.firebase_chat.MainActivity2.musicFiles;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -27,8 +28,6 @@ import com.bumptech.glide.Glide;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
-
-import static tech.jkimtech.firebase_chat.MainActivity2.musicFiles;
 
 /*
  * Main Activity class that loads {@link MainFragment}.
@@ -135,7 +134,7 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
                 }
             });
             mediaPlayer.setOnCompletionListener(this);
-            playPauseBtn.setBackgroundResource(R.drawable.ic_baseline_pause_circle_filled_24);
+            playPauseBtn.setBackgroundResource(R.drawable.pause);
             mediaPlayer.start();
         }
         else
@@ -160,7 +159,7 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
                 }
             });
             mediaPlayer.setOnCompletionListener(this);
-            playPauseBtn.setBackgroundResource(R.drawable.ic_baseline_play_circle_filled_24);
+            playPauseBtn.setBackgroundResource(R.drawable.play);
         }
     }
 
@@ -203,7 +202,7 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
                 }
             });
             mediaPlayer.setOnCompletionListener(this);
-            playPauseBtn.setBackgroundResource(R.drawable.ic_baseline_pause_circle_filled_24);
+            playPauseBtn.setBackgroundResource(R.drawable.play);
             mediaPlayer.start();
         }
         else
@@ -228,7 +227,7 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
                 }
             });
             mediaPlayer.setOnCompletionListener(this);
-            playPauseBtn.setBackgroundResource(R.drawable.ic_baseline_play_circle_filled_24);
+            playPauseBtn.setBackgroundResource(R.drawable.pause);
         }
     }
 
@@ -251,7 +250,7 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
     private void playPauseBtnClicked() {
         if (mediaPlayer.isPlaying())
         {
-            playPauseBtn.setImageResource(R.drawable.ic_baseline_play_circle_filled_24);
+            playPauseBtn.setImageResource(R.drawable.play);
             mediaPlayer.pause();
             seekBar.setMax(mediaPlayer.getDuration()/1000);
             PlayerActivity.this.runOnUiThread(new Runnable() {
@@ -268,7 +267,7 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
         }
         else
         {
-            playPauseBtn.setImageResource(R.drawable.ic_baseline_pause_circle_filled_24);
+            playPauseBtn.setImageResource(R.drawable.pause);
             mediaPlayer.start();
             seekBar.setMax(mediaPlayer.getDuration()/1000);
             PlayerActivity.this.runOnUiThread(new Runnable() {
@@ -306,7 +305,7 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
         position = getIntent().getIntExtra("position", -1);
         listsongs = musicFiles;
         if (listsongs != null){
-            playPauseBtn.setImageResource(R.drawable.ic_baseline_pause_circle_filled_24);
+            playPauseBtn.setImageResource(R.drawable.pause);
             uri = Uri.parse(listsongs.get(position).getPath());
         }
         if (mediaPlayer != null)
@@ -390,7 +389,7 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
         else {
             Glide.with(this)
                     .asBitmap()
-                    .load(R.drawable.jkt)
+                    .load(R.drawable.logo)
                     .into(cover_art);
             ImageView gradient = findViewById(R.id.imageViewGradient);
             RelativeLayout mContainer = findViewById(R.id.mContainer);
