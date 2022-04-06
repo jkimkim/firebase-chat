@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
 
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </FrameLayout>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/mnavigatiom_view"
         android:layout_width="match_parent"
@@ -15,9 +22,6 @@
         app:menu="@menu/music_menu">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-    <androidx.viewpager.widget.ViewPager
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/viewPager"/>
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>

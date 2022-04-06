@@ -113,7 +113,7 @@ public class MainActivity2 extends AppCompatActivity {
         }
         else {
             musicFiles = getAllAudio(this);
-            initViewPager();
+
         }
     }
 
@@ -124,7 +124,7 @@ public class MainActivity2 extends AppCompatActivity {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
                 //Do anything you want permission related;
                 musicFiles = getAllAudio(this);
-                initViewPager();
+
             }
             else {
                 ActivityCompat.requestPermissions(MainActivity2.this, new String[]{
@@ -134,49 +134,7 @@ public class MainActivity2 extends AppCompatActivity {
         }
     }
 
-    private void initViewPager() {
-        ViewPager viewPager = findViewById(R.id.viewPager);
-        //TabLayout tabLayout = findViewById(R.id.tabLayout);
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-        viewPagerAdapter.addFragments(new Songs_Fragment(), "Songs");
-        viewPagerAdapter.addFragments(new AlbumFragment(), "Albums");
-        viewPagerAdapter.addFragments(new ArtistsFragment(), "Artists");
-        viewPager.setAdapter(viewPagerAdapter);
-        //tabLayout.setupWithViewPager(viewPager);
-    }
 
-    public static class ViewPagerAdapter extends FragmentPagerAdapter {
-
-        private ArrayList<Fragment> fragments;
-        private ArrayList <String> titles;
-        public ViewPagerAdapter(@NonNull FragmentManager fm) {
-            super(fm);
-            this.fragments = new ArrayList<>();
-            this.titles = new ArrayList<>();
-        }
-
-        void addFragments(Fragment fragment, String title){
-            fragments.add(fragment);
-            titles.add(title);
-        }
-
-        @NonNull
-        @Override
-        public Fragment getItem(int position) {
-
-            return fragments.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return fragments.size();
-        }
-        @Nullable
-        @Override
-        public CharSequence getPageTitle(int position){
-            return titles.get(position);
-        }
-    }
     public static ArrayList<MusicFiles> getAllAudio(Context context){
         ArrayList<MusicFiles> tempAudioList = new ArrayList<>();
         Uri uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;

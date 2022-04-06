@@ -76,11 +76,9 @@ public class DashboardActivity extends AppCompatActivity {
                             return true;
 
                         case R.id.nav_music:
-                            actionBar.setTitle("All Songs");
-                            Songs_Fragment fragment5 = new Songs_Fragment();
-                            FragmentTransaction ft5 = getSupportFragmentManager().beginTransaction();
-                            ft5.replace(R.id.content, fragment5, "");
-                            ft5.commit();
+                            actionBar.setTitle("Music");
+                            Intent intent = new Intent(DashboardActivity.this, MainActivity2.class);
+                            startActivity(intent);
                             return true;
                     }
 
