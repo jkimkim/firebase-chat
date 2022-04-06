@@ -49,11 +49,11 @@ public class MainActivity2 extends AppCompatActivity {
         navigationView.setOnNavigationItemSelectedListener(selectedListener);
         //mProfileTv = findViewById(R.id.profileTv);
 
-        actionBar.setTitle("Home");
-        HomeFragment fragment1 = new HomeFragment();
-        FragmentTransaction ft1 = getSupportFragmentManager().beginTransaction();
-        ft1.replace(R.id.content, fragment1, "");
-        ft1.commit();
+        actionBar.setTitle("All Songs");
+        Songs_Fragment fragment5 = new Songs_Fragment();
+        FragmentTransaction ft5 = getSupportFragmentManager().beginTransaction();
+        ft5.replace(R.id.content, fragment5, "");
+        ft5.commit();
 
         permission();
     }
