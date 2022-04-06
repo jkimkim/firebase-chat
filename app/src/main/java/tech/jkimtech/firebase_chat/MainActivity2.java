@@ -82,17 +82,19 @@ public class MainActivity2 extends AppCompatActivity {
                             return true;
 
                         case R.id.nav_artists:
-                            actionBar.setTitle("Users");
+                            actionBar.setTitle("Artists");
                             ArtistsFragment fragment7 = new ArtistsFragment();
                             FragmentTransaction ft7 = getSupportFragmentManager().beginTransaction();
                             ft7.replace(R.id.content, fragment7, "");
                             ft7.commit();
                             return true;
 
-                        case R.id.nav_music:
-                            actionBar.setTitle("Music");
-                            Intent intent = new Intent(MainActivity2.this, MainActivity2.class);
-                            startActivity(intent);
+                        case R.id.nav_playlist:
+                            actionBar.setTitle("Playlists");
+                            Playlists fragment8 = new Playlists();
+                            FragmentTransaction ft8 = getSupportFragmentManager().beginTransaction();
+                            ft8.replace(R.id.content, fragment8, "");
+                            ft8.commit();
                             return true;
                     }
 
