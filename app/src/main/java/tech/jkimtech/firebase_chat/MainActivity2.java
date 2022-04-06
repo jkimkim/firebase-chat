@@ -2,16 +2,19 @@ package tech.jkimtech.firebase_chat;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.IpSecAlgorithm;
@@ -19,8 +22,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -30,13 +35,71 @@ public class MainActivity2 extends AppCompatActivity {
     public static final int REQUEST_CODE = 1;
     static ArrayList<MusicFiles>musicFiles;
     static boolean shuffleBoolean = false, repeatBoolean = false;
+    ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+        actionBar = getSupportActionBar();
+        actionBar.setTitle("All Songs");
+
+        BottomNavigationView navigationView = findViewById(R.id.mnavigatiom_view);
+        navigationView.setOnNavigationItemSelectedListener(selectedListener);
+        //mProfileTv = findViewById(R.id.profileTv);
+
+        actionBar.setTitle("Home");
+        HomeFragment fragment1 = new HomeFragment();
+        FragmentTransaction ft1 = getSupportFragmentManager().beginTransaction();
+        ft1.replace(R.id.content, fragment1, "");
+        ft1.commit();
+
         permission();
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener selectedListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                    switch (item.getItemId()){
+                        case R.id.nav_musicfiles:
+
+                            actionBar.setTitle("All Songs");
+                            Songs_Fragment fragment5 = new Songs_Fragment();
+                            FragmentTransaction ft5 = getSupportFragmentManager().beginTransaction();
+                            ft5.replace(R.id.content, fragment5, "");
+                            ft5.commit();
+                            return true;
+
+                        case R.id.nav_albums:
+                            actionBar.setTitle("Profile");
+                            AlbumFragment fragment6 = new AlbumFragment();
+                            FragmentTransaction ft6 = getSupportFragmentManager().beginTransaction();
+                            ft6.replace(R.id.content, fragment6, "");
+                            ft6.commit();
+                            return true;
+
+                        case R.id.nav_artists:
+                            actionBar.setTitle("Users");
+                            ArtistsFragment fragment7 = new ArtistsFragment();
+                            FragmentTransaction ft7 = getSupportFragmentManager().beginTransaction();
+                            ft7.replace(R.id.content, fragment7, "");
+                            ft7.commit();
+                            return true;
+
+                        case R.id.nav_music:
+                            actionBar.setTitle("Music");
+                            Intent intent = new Intent(MainActivity2.this, MainActivity2.class);
+                            startActivity(intent);
+                            return true;
+                    }
+
+                    return false;
+                }
+            };
+
     private void permission() {
         if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED)
@@ -71,13 +134,13 @@ public class MainActivity2 extends AppCompatActivity {
 
     private void initViewPager() {
         ViewPager viewPager = findViewById(R.id.viewPager);
-        TabLayout tabLayout = findViewById(R.id.tabLayout);
+        //TabLayout tabLayout = findViewById(R.id.tabLayout);
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPagerAdapter.addFragments(new Songs_Fragment(), "Songs");
         viewPagerAdapter.addFragments(new AlbumFragment(), "Albums");
         viewPagerAdapter.addFragments(new ArtistsFragment(), "Artists");
         viewPager.setAdapter(viewPagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);
+        //tabLayout.setupWithViewPager(viewPager);
     }
 
     public static class ViewPagerAdapter extends FragmentPagerAdapter {

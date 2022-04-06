@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/nav_musicfiles"
+        android:title="music"
+        android:icon="@drawable/ic_music"/>
+
+    <item android:id="@+id/nav_artists"
+        android:title="Artists"
+        android:icon="@drawable/ic_profile"/>
+
+    <item android:id="@+id/nav_albums"
+        android:title="Albums"
+        android:icon="@drawable/ic_users"/>
+    <item android:id="@+id/nav_playlist"
+        android:title="PlayLists"
+        android:icon="@drawable/ic_music"/>
+
+</menu>
