@@ -6,12 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
 
-    <FrameLayout
-        android:id="@+id/content"
+    <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-    </FrameLayout>
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:id="@+id/tabLayout"
+        app:tabIndicatorFullWidth="true"
+        app:tabIndicatorGravity="center"
+        app:tabTextColor="@color/black"
+        app:tabIndicatorHeight="40dp"
+        app:tabIndicatorColor="#A4C6C3"
+        app:tabIndicator="@drawable/tab_indicator"
+        android:outlineAmbientShadowColor="@color/white"
+        android:outlineSpotShadowColor="@color/white"
+        android:requiresFadingEdge="horizontal"
+
+        >
+
+    </com.google.android.material.tabs.TabLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/mnavigatiom_view"
@@ -22,6 +34,9 @@
         app:menu="@menu/music_menu">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewPager"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
