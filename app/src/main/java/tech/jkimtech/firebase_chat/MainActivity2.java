@@ -50,10 +50,8 @@ public class MainActivity2 extends AppCompatActivity {
         //mProfileTv = findViewById(R.id.profileTv);
 
         actionBar.setTitle("All Songs");
-        Songs_Fragment fragment5 = new Songs_Fragment();
-        FragmentTransaction ft5 = getSupportFragmentManager().beginTransaction();
-        ft5.replace(R.id.content, fragment5, "");
-        ft5.commit();
+        Intent intent = new Intent(MainActivity2.this, MainActivity2.class);
+        startActivity(intent);
 
         permission();
     }
@@ -67,23 +65,21 @@ public class MainActivity2 extends AppCompatActivity {
                         case R.id.nav_musicfiles:
 
                             actionBar.setTitle("All Songs");
-                            Songs_Fragment fragment5 = new Songs_Fragment();
-                            FragmentTransaction ft5 = getSupportFragmentManager().beginTransaction();
-                            ft5.replace(R.id.content, fragment5, "");
-                            ft5.commit();
+                            Intent intent = new Intent(MainActivity2.this, MainActivity2.class);
+                            startActivity(intent);
                             return true;
 
                         case R.id.nav_albums:
-                            actionBar.setTitle("Profile");
-                            AlbumFragment fragment6 = new AlbumFragment();
+                            actionBar.setTitle("Videos");
+                            VideoFragment fragment6 = new VideoFragment();
                             FragmentTransaction ft6 = getSupportFragmentManager().beginTransaction();
                             ft6.replace(R.id.content, fragment6, "");
                             ft6.commit();
                             return true;
 
                         case R.id.nav_artists:
-                            actionBar.setTitle("Artists");
-                            ArtistsFragment fragment7 = new ArtistsFragment();
+                            actionBar.setTitle("Gallery");
+                            GalleryFragment fragment7 = new GalleryFragment();
                             FragmentTransaction ft7 = getSupportFragmentManager().beginTransaction();
                             ft7.replace(R.id.content, fragment7, "");
                             ft7.commit();
